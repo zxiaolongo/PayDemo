@@ -35,6 +35,7 @@ public class WXPayEntryActivity extends AppCompatActivity implements IWXAPIEvent
     public void onReq(BaseReq baseReq) {
     }
 
+    //notice 3 微信支付完成后回调这里
     @Override
     public void onResp(BaseResp baseResp) {
         if (baseResp.errCode == 0) {//支付成功  -- 后台查询订单是否真的成功
@@ -54,7 +55,7 @@ public class WXPayEntryActivity extends AppCompatActivity implements IWXAPIEvent
         }
     }
 
-    //轮询请求3次
+    //notice 4 轮询请求3次 查看后台是否真正成功
     private void queryResult() {
 //        HttpUtils.getInstance().checkOrder(App.nOrderNo).enqueue(new Callback<ServerResponse>(){
 //            @Override

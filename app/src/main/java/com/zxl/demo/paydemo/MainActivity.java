@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         createOrder();
     }
-    //1 交由后台生成微信订单
+    //notice 1 交由后台生成微信订单
     private void createOrder() {
         //1 交由后台生成微信订单
 //        HttpUtils.getInstance().weiXinPay(String.valueOf(item.mFee), "维修费用", item.vcOrderNo).enqueue(new com.zjxnkj.mobile.wisdompark.net.callback.Callback<WeChatPayInfo>() {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
     }
 
-    //2 调起微信支付
+    //notice 2 调起微信支付   3在 WXPayEntryActivity
     private void wxPay(final WeChatPayInfo.ObjectBean objectBean) {
         MyApplication.nOrderNo = objectBean.vcOrderNo;
         new Thread(new Runnable() {
